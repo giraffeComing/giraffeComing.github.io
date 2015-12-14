@@ -1,0 +1,278 @@
+@charset "utf-8";
+
+/**
+ * css3lib\
+ *
+ * thanks: 
+ * http://bourbon.io/
+ * https://github.com/thomas-mcdonald/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/_mixins.scss
+ * https://github.com/marvin1023/sassCore/blob/master/core/_css3.scss
+ */
+
+
+// css3 global prefix setting
+$prefix-for-webkit: true !default;
+$prefix-for-mozilla: true !default;
+$prefix-for-microsoft: true !default;
+$prefix-for-opera: true !default;
+$prefix-for-spec: true !default;
+
+
+@mixin disable-prefix-for-all() {
+  $prefix-for-webkit: false;
+  $prefix-for-mozilla: false;
+  $prefix-for-microsoft: false;
+  $prefix-for-opera: false;
+  $prefix-for-spec: false;
+}
+
+@mixin prefixer ($property, $value, $prefixes) {
+  @each $prefix in $prefixes {
+
+    @if $prefix == webkit and $prefix-for-webkit == true {
+      -webkit-#{$property}: $value;
+    }
+    @else if $prefix == moz and $prefix-for-mozilla == true {
+      -moz-#{$property}: $value;
+    }
+    @else if $prefix == ms and $prefix-for-microsoft == true {
+      -ms-#{$property}: $value;
+    }
+    @else if $prefix == o and $prefix-for-opera == true {
+      -o-#{$property}: $value;
+    }
+    @else if $prefix == spec and $prefix-for-spec == true {
+      #{$property}: $value;
+    }
+    @else {
+      // @warn "Unrecognized prefix: #{$prefix}";
+    }
+  }
+}
+
+// Adds keyframes blocks for supported prefixes, removing redundant prefixes in the block's content
+// 
+// prefix:
+// webkit moz ms spec
+// 
+// example:
+// @include keyframes(pulse, webkit moz ms spec){
+//     0% {
+//         opacity: 1;   
+//         @include transform(scale(1));
+//     }
+//     50% {
+//         opacity: 0.7;   
+//         @include transform(scale(0.9));
+//     }
+//     100% {
+//         opacity: 1;   
+//         @include transform(scale(1));
+//     }
+// };
+@mixin keyframes($name, $prefixes) {
+  $original-prefix-for-webkit: $prefix-for-webkit;
+  $original-prefix-for-mozilla: $prefix-for-mozilla;
+  $original-prefix-for-microsoft: $prefix-for-microsoft;
+  $original-prefix-for-opera: $prefix-for-opera;
+  $original-prefix-for-spec: $prefix-for-spec;
+  
+  @each $prefix in $prefixes {
+    @if $prefix == webkit and $original-prefix-for-webkit == true {
+      @include disable-prefix-for-all();
+      $prefix-for-webkit: true;
+      @-webkit-keyframes #{$name} {
+        @content;
+      }
+    }
+    @if $prefix == moz and $original-prefix-for-mozilla == true {
+      @include disable-prefix-for-all();
+      $prefix-for-mozilla: true;
+      @-moz-keyframes #{$name} {
+        @content;
+      }
+    }
+    @if $prefix == ms and $original-prefix-for-microsoft == true {
+      @include disable-prefix-for-all();
+      $prefix-for-microsoft: true;
+      @-ms-keyframes #{$name} {
+        @content;
+      }
+    }
+    @if $prefix == o and $original-prefix-for-opera == true {
+      @include disable-prefix-for-all();
+      $prefix-for-opera: true;
+      @-o-keyframes #{$name} {
+        @content;
+      }
+    }
+    @if $prefix == spec {
+      @include disable-prefix-for-all();
+      $prefix-for-spec: true;
+      @keyframes #{$name} {
+        @content;
+      }
+    }
+  }
+
+  $prefix-for-webkit: $original-prefix-for-webkit;
+  $prefix-for-mozilla: $original-prefix-for-mozilla;
+  $prefix-for-microsoft: $original-prefix-for-microsoft;
+  $prefix-for-opera: $original-prefix-for-opera;
+  $prefix-for-spec: $original-prefix-for-spec;
+}
+
+
+// transform
+// 
+// example:
+// @include transform(rotate(-4deg));
+// @include transform(rotate(-4deg) translate(6px, 18px) scale(1));
+@mixin transform($property: none) {
+//  none | <transform-function>
+  @include prefixer(transform, $property, webkit moz ms spec);
+}
+
+// transform-origin
+// 
+// example:
+// @include transform-origin(center bottom 0);
+// @include transform-origin(505, 50%);
+@mixin transform-origin($axes: 50%) {
+// x-axis - left | center | right  | length | %
+// y-axis - top  | center | bottom | length | %
+// z-axis -                          length
+  @include prefixer(transform-origin, $axes, webkit moz ms spec);
+}
+
+@mixin transform-style ($style: flat) {
+  @include prefixer(transform-style, $style, webkit moz ms spec);
+}
+
+// animation
+// 
+// example:
+// @include animation(pop_move_1 6s infinite);
+@mixin animation ($animations...) {
+  @include prefixer(animation, $animations, webkit moz ms spec);
+}
+
+// animation-delay
+// 
+// example:
+// @include animation-delay(0.2s);
+@mixin animation-delay ($times...) {
+  @include prefixer(animation-delay, $times, webkit moz ms spec);
+}
+
+// transition
+// 
+// example:
+// @include transition(all 0.2s ease-in-out, opacity 1s);
+@mixin transition ($properties...) {
+  @if length($properties) >= 1 {
+    @include prefixer(transition, $properties, webkit moz ms spec);
+  }
+
+  @else {
+    $properties: all 0.15s ease-out;
+    @include prefixer(transition, $properties, webkit moz ms spec);
+  }
+}
+
+@mixin transition-duration($times...) {
+  @include prefixer(transition-duration, $times, webkit moz ms spec);
+}
+
+@mixin transition-timing-function($motions...) {
+  // timing-function
+  // https://developer.mozilla.org/en-US/docs/Web/CSS/timing-function
+  @include prefixer(transition-timing-function, $motions, webkit moz ms spec);
+}
+
+@mixin transition-delay($times...) {
+  @include prefixer(transition-delay, $times, webkit moz ms spec);
+}
+
+
+// gradient
+// 
+// example:
+// @include gradient(#875D64, #81575E);
+// 
+// @mixin gradient($from, $to) {
+//     background: $from;
+//     background: -moz-linear-gradient(top,$from,$to);
+//     background: -webkit-gradient(linear,0 0,0 100%,from($from),to($to));
+//     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="$from", endColorstr="$to");
+//     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr="$from", endColorstr="$to")";
+// }
+@mixin gradient($from, $to) {
+
+    background-color:$from;
+    background-repeat:repeat-x;
+    background-image:-moz-linear-gradient(top,$from,$to);
+    background-image:-webkit-linear-gradient(top,$from,$to);
+    background-image:-o-linear-gradient(top,$from,$to);
+    background-image:linear-gradient(top,$from,$to);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}',endColorstr='#{$to}',GradientType=0);
+
+}
+
+@mixin gradientLeft($from, $to) {
+
+  background-color:$from;
+  background-repeat:repeat-y;
+  background-image:-moz-linear-gradient(left,$from,$to);
+  background-image:-webkit-linear-gradient(left,$from,$to);
+  background-image:-o-linear-gradient(left,$from,$to);
+  background-image:linear-gradient(left,$from,$to);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}',endColorstr='#{$to}',GradientType=1);
+
+}
+
+// max-screen
+// 
+// example:
+// @include max-screen(480, root480) {
+// 
+        // your css
+//     .test { color: red }
+//     #testDiv{
+//         text-align: center;
+//         font-size: 20px;
+//     }
+//     
+// }
+@mixin max-screen($res, $prefix){
+    @media ( max-width: #{$res}px ){
+        @content;
+    }
+    .#{$class}{
+        @content;
+    }
+}
+
+// min-screen
+// 
+// example:
+// @include min-screen(480, root480) {
+// 
+        // your css
+//     .test { color: red }
+//     #testDiv{
+//         text-align: center;
+//         font-size: 20px;
+//     }
+//     
+// }
+
+@mixin min-screen($res, $class){
+    @media ( min-width: #{$res}px ){
+        @content;
+    }
+    .#{$class}{
+        @content;
+    }
+}
+

@@ -1,0 +1,25 @@
+@charset "utf-8";
+// 全局公共样式
+@import "_common.scss";
+@import "_css3lib";
+@import "../i/bgs/*.png";
+@import "_base";
+
+.container{
+    width: 1200px;
+    margin: 30px auto 62px;
+    overflow: hidden;
+    font-family: "Microsoft Yahei", "微软雅黑";
+    border-right: 1px solid #f0f0f0;
+}
+
+body{
+    background: #f4f4f4
+}
+
+/*产品试用申请样式*/
+$hack_ie7: "+";
+.z_container {
+    width: 1000px;
+    margin: 0 auto;
+}

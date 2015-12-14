@@ -1,0 +1,228 @@
+@charset "utf-8";
+/**
+ * @file: common.scss
+ * @project: 首页-全局公共样式
+ * @update: 2015-01-26 13:40:39
+ * @changeLog: 
+ *  2015-01-26: 创建文件
+ */
+@import "_css3lib.scss";
+@import "compass/css3";
+
+$bg-layout: vertical;
+$bg-spacing: 20px;
+$bg-sprite-dimensions: false;
+//@import "indexBg/*.png";
+
+
+/**
+ * layout 布局 
+ */
+.mt5 { margin-top: 5px }
+.mt10 { margin-top: 10px }
+.mt15 { margin-top: 15px }
+.mt20 { margin-top: 20px }
+.mb5 { margin-bottom: 5px }
+.mb10 { margin-bottom: 10px }
+.mb15 { margin-bottom: 15px }
+.mb20 { margin-bottom: 20px }
+.mb30{ margin-bottom:30px;}
+.ml5 { margin-left: 5px }
+.ml10 { margin-left: 10px }
+.ml15 { margin-left: 15px }
+.ml20 { margin-left: 20px }
+.mr5 { margin-right: 5px }
+.mr10 { margin-right: 10px }
+.mr15 { margin-right: 15px }
+.mr20 { margin-right: 20px }
+
+.pt5 { padding-top: 5px }
+.pt10 { padding-top: 10px }
+.pt15 { padding-top: 15px }
+.pt20 { padding-top: 20px }
+.pb5 { padding-bottom: 5px }
+.pb10 { padding-bottom: 10px }
+.pb15 { padding-bottom: 15px }
+.pb20 { padding-bottom: 20px }
+.pl5 { padding-left: 5px }
+.pl10 { padding-left: 10px }
+.pl15 { padding-left: 15px }
+.pl20 { padding-left: 20px }
+.pr5 { padding-right: 5px }
+.pr10 { padding-right: 10px }
+.pr15 { padding-right: 15px }
+.pr20 { padding-right: 20px }
+
+/**
+ * color 颜色
+ */
+.font-black{
+    color: #666;
+}
+.font-gray{
+    color: #999;
+}
+.font-red{
+    color:#ff5256;
+}
+.font-blue{
+    color:#60a3ff;
+}
+// .font-red{
+//     color: $baseColorRed;
+// }
+// .font-blue{
+//     color: $baseColorBlue;
+// }
+// 加粗
+.font-bold{
+    font-weight: bold;
+}
+
+// a{
+//    color: $baseColorBlue; 
+// }
+// a:hover{
+//     text-decoration: none;
+//     color: $baseColorRed;
+// }
+
+/**
+ * 状态
+ */
+.hide{
+    display: none;
+}
+
+
+
+/**
+ * button
+ */
+// button
+.ui-button{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    height: 32px;
+    padding: 0 14px;
+    color: #fff;
+    border: none;
+    border: 1px solid #ff5256;
+    @include gradient(#ff696c, #ff5256);
+    border-radius: 3px;
+    vertical-align: middle;
+    cursor: pointer;
+    text-align: center;
+    // text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    font-family: 'Microsoft Yahei';
+
+    &:hover{
+        @include gradient(#ff5e5b, #ff4644);
+        border-color: #ff4644;
+    }
+    // 普通按钮金融
+    &.disable,
+    &.ui-button-disable,
+    &.btn-disable{
+        cursor: default;
+        opacity: .5;
+        filter: alpha(opacity=50);
+    }
+}
+a.ui-button{
+    height: 30px;
+    line-height: 30px;
+    &:hover{
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
+.ui-button-XL{
+    height: 46px;
+    padding: 0;
+    font-size: 18px;
+    width: 200px;
+    font-family: "Microsoft Yahei";
+    // text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+    &.w300{
+        width: 300px;
+    }
+}
+a.ui-button-XL{
+    height: 44px;
+    line-height: 44px;
+    width: 198px;
+    &.w300{
+        width: 298px;
+    }
+}
+
+/**
+ * animation
+ */
+// animation-scale 通用缩放动画
+.animation-scale{
+
+    .animation-scale-item{
+        @include transition(all 0.3s ease);
+    }
+
+    &:hover{
+        .animation-scale-item{
+            @include transform(scale3d(0.92, 0.92, 1));
+        }
+    }
+}
+
+
+/**
+ * 背景图片
+ */
+%bg{
+    background-image:url("i/bg.png?20150505");
+    background-repeat: no-repeat;
+}
+%qrcord{
+    background-image:url("i/qrCode.png?20150306");
+    background-repeat: no-repeat;
+}
+
+/**
+ * 底部背景色重置
+ */
+.f-copyright{
+    background:#323232;
+}
+
+.lazyload-img{
+    background: url(http://misc.360buyimg.com/lib/skin/e/i/error-jd.gif) no-repeat 50% 50%;
+}
+
+/**
+ * IE 升级提示
+ */
+.ie-tips{
+    height: 39px;
+    line-height: 39px;
+    background-color: #60a3ff;
+    color:#fff;
+    font-size: 14px;
+    text-align: center;
+    font-family:"microsoft yahei";
+    a{
+        color:#fff;
+        &:hover{
+            @include  opacity(0.9);
+        }
+    }
+    .shut{
+        cursor: pointer;
+        font-size: 20px;
+        &:hover{
+            @include  opacity(0.9);
+        }
+    }
+}
