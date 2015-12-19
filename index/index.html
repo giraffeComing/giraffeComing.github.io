@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-
 <head>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Card Expansion Effect - Demo 1</title>
+<title>svg</title>
 <meta name="description" content="Card Expansion Effect with SVG clipPath" />
 <meta name="keywords" content="clipPath, svg, effect, layout, expansion, images, grid, polygon" />
 <meta name="author" content="Claudio Calautti for Codrops" />
@@ -25,6 +24,11 @@
 	<!--strock-->
 	<link rel="stylesheet" type="text/css" href="stroke/stroke.css" />
 	<!--strock-->
+	<!--svgBorder-->
+	<link rel="stylesheet" type="text/css" href="svgBorder/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="svgBorder/css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="svgBorder/css/component.css" />
+	<!--svgBorder-->
 
 <!--必要样式-->
 <link rel="stylesheet" type="text/css" href="css/card.css" />
@@ -56,14 +60,13 @@ if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
 									<circle class="clip" cx="960" cy="250" r="992"></circle>
 								</clipPath>
 							</defs>
-							<image clip-path="url(#clipPath1)" width="1920" height="500" xlink:href="img/a.jpg"></image>
+							<image clip-path="url(#clipPath1)" width="1920" height="500" xlink:href="img/a.png"></image>
 						</svg>
 						<div class="card__content">
 							<i class="card__btn-close fa fa-times"></i>
 							<!--<div class="card__caption">-->
 							<!--</div>-->
 							<div class="card__copy" style="background: #00afe9">
-								<p class="card__subtitle" style="font-size: 14px; color: #fff">可爱的小图标</p>
 								<div class="container">
 									<section class="si-icons si-icons-default">
 										<span class="si-icon si-icon-nav-left-arrow" data-icon-name="navLeftArrow"></span>
@@ -105,7 +108,7 @@ if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
 									<circle class="clip" cx="960" cy="250" r="992"></circle>
 								</clipPath>
 							</defs>
-							<image clip-path="url(#clipPath2)" width="1920" height="500" xlink:href="img/b.jpg"></image>
+							<image clip-path="url(#clipPath2)" width="1920" height="500" xlink:href="img/b.png"></image>
 						</svg>
 						<div class="card__content">
 							<i class="card__btn-close fa fa-times"></i>
@@ -267,22 +270,14 @@ if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
 									<circle class="clip" cx="960" cy="250" r="992"></circle>
 								</clipPath>
 							</defs>
-							<image clip-path="url(#clipPath3)" width="1920" height="500" xlink:href="img/c.jpg"></image>
+							<image clip-path="url(#clipPath3)" width="1920" height="500" xlink:href="img/c.png"></image>
 						</svg>
 						<div class="card__content strock">
 							<i class="card__btn-close fa fa-times" id="closeStroke"></i>
-							<!--<div id="img"></div>-->
-							<!--<svg width="540" height="258" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" stroke="#6600CC">-->
-								<!--<path d="M75 179L75 161L102 161L105 162C105 162 110 166 109 171C108 176 104 178 102 178C100 179 97 179 97 179C97 179 76 179 75 179ZM74 148L74 132L102 132C102 132 108 134 108 140C108 146 104 147 101 148C98 148 74 148 74 148ZM61 192L61 120L106 120C106 120 135 134 114 155C114 155 126 163 124 174C122 186 118 186 112 190L108 191L104 192L61 192Z" fill="none" fill-opacity="0" stroke="#6600CC" />-->
-								<!--<path d="M75 179L75 161L102 161L105 162C105 162 110 166 109 171C108 176 104 178 102 178C100 179 97 179 97 179C97 179 76 179 75 179ZM74 148L74 132L102 132C102 132 108 134 108 140C108 146 104 147 101 148C98 148 74 148 74 148ZM61 192L61 120L106 120C106 120 135 134 114 155C114 155 126 163 124 174C122 186 118 186 112 190L108 191L104 192L61 192ZM166 180L166 169L145 169C145 169 142 170 140 176C140 176 142 182 144 180L166 180ZM166 157L166 154C166 154 162 150 160 150L131 150L131 139L165 139C165 139 178 142 179 153L179 192L138 192C138 192 114 178 140 158L142 157L166 157Z" fill="none" fill-opacity="0" stroke="#6600CC" />-->
-								<!--<path d="M75 179L75 161L102 161L105 162C105 162 110 166 109 171C108 176 104 178 102 178C100 179 97 179 97 179C97 179 76 179 75 179ZM74 148L74 132L102 132C102 132 108 134 108 140C108 146 104 147 101 148C98 148 74 148 74 148ZM61 192L61 120L106 120C106 120 135 134 114 155C114 155 126 163 124 174C122 186 118 186 112 190L108 191L104 192L61 192ZM166 180L166 169L145 169C145 169 142 170 140 176C140 176 142 182 144 180L166 180ZM166 157L166 154C166 154 162 150 160 150L131 150L131 139L165 139C165 139 178 142 179 153L179 192L138 192C138 192 114 178 140 158L142 157L166 157ZM186 192L186 140L199 140L199 192L186 192ZM200 132L200 121L186 121L186 132L200 132Z" fill="none" fill-opacity="0" stroke="#6600CC" />-->
-								<!--<path d="M75 179L75 161L102 161L105 162C105 162 110 166 109 171C108 176 104 178 102 178C100 179 97 179 97 179C97 179 76 179 75 179ZM74 148L74 132L102 132C102 132 108 134 108 140C108 146 104 147 101 148C98 148 74 148 74 148ZM61 192L61 120L106 120C106 120 135 134 114 155C114 155 126 163 124 174C122 186 118 186 112 190L108 191L104 192L61 192ZM166 180L166 169L145 169C145 169 142 170 140 176C140 176 142 182 144 180L166 180ZM166 157L166 154C166 154 162 150 160 150L131 150L131 139L165 139C165 139 178 142 179 153L179 192L138 192C138 192 114 178 140 158L142 157L166 157ZM186 192L186 140L199 140L199 192L186 192ZM200 132L200 121L186 121L186 132L200 132ZM220 87C220 87 240 88 237 109C237 109 237 127 222 128C207 129 206 105 206 108C206 108 206 94 218 88C218 88 220 88 220 87ZM237 79C236 74 240 57 251 56C251 56 266 54 267 79C267 79 264 100 253 98C253 98 240 96 237 82L237 79ZM275 78C275 78 278 62 292 61C292 61 314 63 304 86C304 86 298 107 282 96C282 96 273 94 275 78ZM299 122C299 122 294 96 316 98C337 100 330 122 329 126C329 130 322 138 314 136C306 135 304 136 299 122ZM254 154L243 154C243 154 234 164 244 170L254 170L254 154ZM254 144L254 133L265 133L265 178L242 178C242 178 215 166 243 144L254 144ZM278 146L278 169L281 171L290 171L290 146L300 146L300 178L277 178C277 178 270 178 268 171L268 146L278 146ZM267 110C267 110 280 109 287 123C295 137 314 151 314 151C314 151 332 174 308 189C308 189 300 192 286 190C286 190 271 185 269 187C269 187 256 187 254 189C254 189 232 193 230 188C230 188 208 182 216 157C216 157 224 144 235 137C246 130 251 117 251 117C251 117 263 108 267 110Z" fill="none" fill-opacity="0" stroke="#6600CC" />-->
-								<!--<path d="M75 179L75 161L102 161L105 162C105 162 110 166 109 171C108 176 104 178 102 178C100 179 97 179 97 179C97 179 76 179 75 179ZM74 148L74 132L102 132C102 132 108 134 108 140C108 146 104 147 101 148C98 148 74 148 74 148ZM61 192L61 120L106 120C106 120 135 134 114 155C114 155 126 163 124 174C122 186 118 186 112 190L108 191L104 192L61 192ZM166 180L166 169L145 169C145 169 142 170 140 176C140 176 142 182 144 180L166 180ZM166 157L166 154C166 154 162 150 160 150L131 150L131 139L165 139C165 139 178 142 179 153L179 192L138 192C138 192 114 178 140 158L142 157L166 157ZM186 192L186 140L199 140L199 192L186 192ZM200 132L200 121L186 121L186 132L200 132ZM220 87C220 87 240 88 237 109C237 109 237 127 222 128C207 129 206 105 206 108C206 108 206 94 218 88C218 88 220 88 220 87ZM237 79C236 74 240 57 251 56C251 56 266 54 267 79C267 79 264 100 253 98C253 98 240 96 237 82L237 79ZM275 78C275 78 278 62 292 61C292 61 314 63 304 86C304 86 298 107 282 96C282 96 273 94 275 78ZM299 122C299 122 294 96 316 98C337 100 330 122 329 126C329 130 322 138 314 136C306 135 304 136 299 122ZM254 154L243 154C243 154 234 164 244 170L254 170L254 154ZM254 144L254 133L265 133L265 178L242 178C242 178 215 166 243 144L254 144ZM278 146L278 169L281 171L290 171L290 146L300 146L300 178L277 178C277 178 270 178 268 171L268 146L278 146ZM267 110C267 110 280 109 287 123C295 137 314 151 314 151C314 151 332 174 308 189C308 189 300 192 286 190C286 190 271 185 269 187C269 187 256 187 254 189C254 189 232 193 230 188C230 188 208 182 216 157C216 157 224 144 235 137C246 130 251 117 251 117C251 117 263 108 267 110ZM348 148L391 148L391 160L348 160L348 148ZM348 170L348 181L390 181L390 170L348 170ZM338 139L363 139L366 132L336 132L336 121L403 121L403 132L378 132L375 138L401 138L401 187C401 187 401 191 397 192L338 192C338 192 338 140 338 139ZM412 191L412 121L444 121L444 116L455 116L455 121L481 121L481 129L422 129L422 191L412 191ZM425 138L432 138L432 132L441 132L441 138L465 138L465 133L473 133L473 138L481 138L481 144L474 144L474 153C474 153 473 157 470 157L432 157L432 145L425 145L425 138ZM442 145L464 145L464 150L442 150L442 145ZM426 168L426 162L482 162L482 168L461 179L468 183L481 183L481 191L464 192L454 185C454 185 447 191 442 192C437 192 425 192 425 192L425 183L437 183L444 180C444 180 426 167 426 168ZM442 169L463 169L453 175C453 175 442 170 442 169Z" fill="none" fill-opacity="0" stroke="#6600CC" />-->
 
-							<!--</svg>-->
 							<div id="img"></div>
 							<svg width="1200" height="701" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="strokedash">
-								<path d="M2 180L2 2L398 3L398 179C398 179 0 179 2 180ZM0 700L1 183L397 183L398 700C398 700 -3 701 0 700ZM400 279L400 0L798 0L798 280L400 279ZM400 520L400 282L798 283L798 519L400 520ZM401 696L400 523L798 523L799 699C799 699 399 694 401 696ZM800 180L801 3L1198 2L1199 180C1199 180 799 179 800 180ZM799 701L799 182L1199 182L1200 700C1200 700 800 701 799 701ZM980 589L1000 570L1019 589L1016 592L1000 578L984 592L980 589ZM980 637L999 655L1019 637L1016 633L1000 648L983 634L980 637ZM455 1L455 24C455 24 425 24 425 57C425 57 426 85 454 85C454 85 483 85 485 57C485 57 486 26 457 24L457 1L455 1ZM742 45L754 45L754 32L759 32L759 45L772 45L772 50L759 50L759 63L754 63L754 50L742 50L742 45ZM431 250L511 250L511 253L431 253L431 250Z" fill="none" stroke="#666666" stroke-opacity="1" xmlns="http://www.w3.org/2000/svg" />
+								<path d="M2 180L2 2L398 3L398 179C398 179 0 179 2 180ZM0 700L1 183L397 183L398 700C398 700 -3 701 0 700ZM400 279L400 0L798 0L798 280L400 279ZM400 520L400 282L798 283L798 519L400 520ZM401 696L400 523L798 523L799 699C799 699 399 694 401 696ZM800 180L801 3L1198 2L1199 180C1199 180 799 179 800 180ZM799 701L799 182L1199 182L1200 700C1200 700 800 701 799 701ZM980 589L1000 570L1019 589L1016 592L1000 578L984 592L980 589ZM980 637L999 655L1019 637L1016 633L1000 648L983 634L980 637ZM455 1L455 24C455 24 425 24 425 57C425 57 426 85 454 85C454 85 483 85 485 57C485 57 486 26 457 24L457 1L455 1ZM742 45L754 45L754 32L759 32L759 45L772 45L772 50L759 50L759 63L754 63L754 50L742 50L742 45ZM431 250L511 250L511 253L431 253L431 250Z" fill="none" stroke="#fff" stroke-opacity="1" xmlns="http://www.w3.org/2000/svg" />
 							</svg>
 							<p>需要的工具</p>
 							<img src="img/tool.jpg" style="width: 100%">
@@ -299,19 +294,19 @@ if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
 									<circle class="clip" cx="960" cy="250" r="992"></circle>
 								</clipPath>
 							</defs>
-							<image clip-path="url(#clipPath4)" width="1920" height="500" xlink:href="img/d.jpg"></image>
+							<image clip-path="url(#clipPath4)" width="1920" height="500" xlink:href="img/d.png"></image>
 						</svg>
 						<div class="card__content">
 							<i class="card__btn-close fa fa-times"></i>
 							<svg width="100%" height="500">
-								<path d="M30 113L33 119C33 119 41 99 54 92C54 92 31 82 61 80C61 80 63 52 89 91C89 91 131 108 113 152C113 152 111 170 71 171C31 173 29 134 31 131C33 128 26 135 26 135L23 130L29 128L18 124L20 118L30 123L25 118C25 118 31 113 30 113ZM74 111L93 124L109 114L113 122L94 129L69 120C69 120 75 110 74 111ZM75 123C75 123 71 131 75 136C75 136 86 133 85 136C84 139 70 146 81 154C92 162 88 160 92 161C96 163 102 153 102 153C102 153 106 152 109 155C112 158 113 141 97 134L109 133C109 133 109 126 107 126C107 126 91 133 75 123ZM92 135C92 135 79 141 80 145C81 149 97 149 100 150C103 151 108 152 108 153C108 153 111 140 92 135ZM90 150L81 152" fill="none" stroke="#FF0033" stroke-opacity="1" >
+								<path d="M30 113L33 119C33 119 41 99 54 92C54 92 31 82 61 80C61 80 63 52 89 91C89 91 131 108 113 152C113 152 111 170 71 171C31 173 29 134 31 131C33 128 26 135 26 135L23 130L29 128L18 124L20 118L30 123L25 118C25 118 31 113 30 113ZM74 111L93 124L109 114L113 122L94 129L69 120C69 120 75 110 74 111ZM75 123C75 123 71 131 75 136C75 136 86 133 85 136C84 139 70 146 81 154C92 162 88 160 92 161C96 163 102 153 102 153C102 153 106 152 109 155C112 158 113 141 97 134L109 133C109 133 109 126 107 126C107 126 91 133 75 123ZM92 135C92 135 79 141 80 145C81 149 97 149 100 150C103 151 108 152 108 153C108 153 111 140 92 135ZM90 150L81 152" fill="none" stroke="#fff" stroke-opacity="1" >
 								<animateMotion
 										path="M 27 177 C 35.83333 188.1667 58.33333 225.5 80 244 C 101.6667 262.5 134.8333 288.8333 157 288 C 179.1667 287.1667 197.1667 257.5 213 239 C 228.8333 220.5 229.1667 202.1667 252 177 C 274.8333 151.8333 322 97.33333 350 88 C 378 78.66666 402.5 104.1667 420 121 C 437.5 137.8333 445.5 165.6667 455 189 C 464.4999 212.3333 467.6666 237.8333 477 261 C 486.3333 284.1667 492.3333 312.3333 511 328 C 529.6666 343.6667 565.1666 360.1667 589 355 C 612.8333 349.8333 635.8333 318.1667 654 297 C 672.1666 275.8333 684.5 251.1667 698 228 C 711.4999 204.8333 710.8333 185.5 735 158 C 759.1666 130.5 822.3333 78.83333 843 63 C 863.6666 47.16666 855.3333 63.16666 859 63 C 862.6666 62.83333 856.8333 55.66666 865 62 C 873.1666 68.33333 895.8333 86.5 908 101 C 920.1666 115.5 925.1666 127.6667 938 149 C 950.8333 170.3333 977.1666 215.6667 985 229 "
 
 										dur="10s" fill="freeze" repeatCount="indefinite"/>
 								</path>
-
 							</svg>
+							<img src="img/d.jpg" style="width: 100%"/>
 						</div>
 					</div>
 				</div>
@@ -324,27 +319,77 @@ if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
 									<circle class="clip" cx="960" cy="250" r="992"></circle>
 								</clipPath>
 							</defs>
-							<image clip-path="url(#clipPath5)" width="1920" height="500" xlink:href="img/e.jpg"></image>
+							<image clip-path="url(#clipPath5)" width="1920" height="500" xlink:href="img/e.png"></image>
 						</svg>
-						<div class="card__content">
+						<div class="card__content backbg">
 							<i class="card__btn-close fa fa-times"></i>
-							<div class="card__caption">
-								<h2 class="card__title">Swimming in the ocean</h2>
-								<p class="card__subtitle">A Makrel's story</p>
-							</div>
-							<div class="card__copy">
-								<div class="meta">
-									<img class="meta__avatar" src="img/authors/5.png" alt="author05" />
-									<span class="meta__author">Michaela Walters</span>
-									<span class="meta__date">06/11/2015</span>
-								</div>
-								<p>Business model canvas bootstrapping deployment startup. In A/B testing pivot niche market alpha conversion startup down monetization partnership business-to-consumer success for investor mass market business-to-business.</p>
-								<p>Release creative social proof influencer iPad crowdsource gamification learning curve network effects monetization. Gamification business plan mass market www.discoverartisans.com direct mailing ecosystem seed round sales long tail vesting period.</p>
-								<p>Product management ramen bootstrapping seed round venture holy grail technology backing partner network entrepreneur beta marketing value proposition. Android stealth conversion scrum project network effects. Creative alpha long tail conversion stealth growth hacking iteration investor A/B testing prototype customer. Startup www.discoverartisans.com direct mailing launch party partnership market ramen metrics focus value proposition.</p>
-								<p>Stock infrastructure seed round sales paradigm shift technology user experience focus gamification. Partnership metrics business plan stealth business-to-business. Deployment graphical user interface monetization. Twitter incubator scrum project entrepreneur branding burn rate ramen backing paradigm shift virality crowdsource.</p>
-								<p>Social proof MVP ecosystem. Ramen launch party pitch deployment stealth. Vesting period MVP equity. Focus creative partnership founders iteration agile development infographic.</p>
-								<p>Low hanging fruit burn rate innovator user experience niche market A/B testing creative launch party product management release. Www.discoverartisans.com influencer business model canvas user experience gamification paradigm shift startup research &amp; development iPad agile development. Strategy incubator infographic success marketing buzz A/B testing responsive web design. Traction research &amp; development pitch seed money venture niche market accelerator network effects.</p>
-							</div>
+							<section class="demo-1">
+								<div class="grid">
+									<div class="box">
+										<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+											<line class="top" x1="0" y1="0" x2="900" y2="0"/>
+											<line class="left" x1="0" y1="460" x2="0" y2="-920"/>
+											<line class="bottom" x1="300" y1="460" x2="-600" y2="460"/>
+											<line class="right" x1="300" y1="0" x2="300" y2="1380"/>
+										</svg>
+										<h3>D</h3>
+									</div>
+									<div class="box">
+										<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+											<line class="top" x1="0" y1="0" x2="900" y2="0"/>
+											<line class="left" x1="0" y1="460" x2="0" y2="-920"/>
+											<line class="bottom" x1="300" y1="460" x2="-600" y2="460"/>
+											<line class="right" x1="300" y1="0" x2="300" y2="1380"/>
+										</svg>
+										<h3>A</h3>
+									</div>
+								</div><!-- /grid -->
+							</section>
+							<section class="demo-2">
+								<div class="grid">
+									<div class="box">
+										<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+											<line class="top" x1="0" y1="0" x2="900" y2="0"/>
+											<line class="left" x1="0" y1="460" x2="0" y2="-920"/>
+											<line class="bottom" x1="300" y1="460" x2="-600" y2="460"/>
+											<line class="right" x1="300" y1="0" x2="300" y2="1380"/>
+										</svg>
+										<h3>J</h3>
+									</div>
+									<div class="box">
+										<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+											<line class="top" x1="0" y1="0" x2="900" y2="0"/>
+											<line class="left" x1="0" y1="460" x2="0" y2="-920"/>
+											<line class="bottom" x1="300" y1="460" x2="-600" y2="460"/>
+											<line class="right" x1="300" y1="0" x2="300" y2="1380"/>
+										</svg>
+										<h3>I</h3>
+									</div>
+								</div><!-- /grid -->
+							</section>
+							<section class="demo-3">
+								<div class="grid">
+									<div class="box">
+										<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+											<line class="top" x1="0" y1="0" x2="900" y2="0"/>
+											<line class="left" x1="0" y1="460" x2="0" y2="-920"/>
+											<line class="bottom" x1="300" y1="460" x2="-600" y2="460"/>
+											<line class="right" x1="300" y1="0" x2="300" y2="1380"/>
+										</svg>
+										<h3>B</h3>
+									</div>
+									<div class="box">
+										<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+											<line class="top" x1="0" y1="0" x2="900" y2="0"/>
+											<line class="left" x1="0" y1="460" x2="0" y2="-920"/>
+											<line class="bottom" x1="300" y1="460" x2="-600" y2="460"/>
+											<line class="right" x1="300" y1="0" x2="300" y2="1380"/>
+										</svg>
+										<h3>U</h3>
+									</div>
+								</div><!-- /grid -->
+							</section>
+
 						</div>
 					</div>
 				</div>
