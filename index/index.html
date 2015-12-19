@@ -106,23 +106,152 @@ if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
 						</svg>
 						<div class="card__content">
 							<i class="card__btn-close fa fa-times"></i>
-							<div class="card__caption">
-								<h2 class="card__title">About Helen</h2>
-								<p class="card__subtitle">A story about a woman</p>
+							<div id="div1" style="width:780px; height:400px; background:url(img/bg.jpg) no-repeat; margin:20px auto; overflow:hidden;">
 							</div>
-							<div class="card__copy">
-								<div class="meta">
-									<img class="meta__avatar" src="img/authors/2.png" alt="author02" />
-									<span class="meta__author">Frank Posterius</span>
-									<span class="meta__date">06/16/2015</span>
-								</div>
-								<p>Business model canvas bootstrapping deployment startup. In A/B testing pivot niche market alpha conversion startup down monetization partnership business-to-consumer success for investor mass market business-to-business.</p>
-								<p>Release creative social proof influencer iPad crowdsource gamification learning curve network effects monetization. Gamification business plan mass market www.discoverartisans.com direct mailing ecosystem seed round sales long tail vesting period.</p>
-								<p>Product management ramen bootstrapping seed round venture holy grail technology backing partner network entrepreneur beta marketing value proposition. Android stealth conversion scrum project network effects. Creative alpha long tail conversion stealth growth hacking iteration investor A/B testing prototype customer. Startup www.discoverartisans.com direct mailing launch party partnership market ramen metrics focus value proposition.</p>
-								<p>Stock infrastructure seed round sales paradigm shift technology user experience focus gamification. Partnership metrics business plan stealth business-to-business. Deployment graphical user interface monetization. Twitter incubator scrum project entrepreneur branding burn rate ramen backing paradigm shift virality crowdsource.</p>
-								<p>Social proof MVP ecosystem. Ramen launch party pitch deployment stealth. Vesting period MVP equity. Focus creative partnership founders iteration agile development infographic.</p>
-								<p>Low hanging fruit burn rate innovator user experience niche market A/B testing creative launch party product management release. Www.discoverartisans.com influencer business model canvas user experience gamification paradigm shift startup research &amp; development iPad agile development. Strategy incubator infographic success marketing buzz A/B testing responsive web design. Traction research &amp; development pitch seed money venture niche market accelerator network effects.</p>
-							</div>
+							<textarea style="width: 100%;height: 500px">
+								var svgNS = 'http://www.w3.org/2000/svg';
+								var oParent = document.getElementById('div1');
+								var centerX = oParent.offsetWidth/2;
+								var centerY = oParent.offsetHeight/2;
+
+								var circleNum = 9;
+								var angleNum = 390/circleNum;
+								var centerR	 = 150;
+								var otherData = [];
+
+								for(var i=0;i<circleNum;i++){
+								var y = Math.sin(i*40*Math.PI/180)*centerR + centerY;
+								var x = Math.cos(i*40*Math.PI/180)*centerR + centerX;
+								otherData.push({x : x , y : y , text : i});
+								}
+
+
+								var data = {
+								centerNode : { text : 'svg' },
+								otherNode : otherData
+								};
+
+								function createTag(tag,objAttr){
+								var oTag = document.createElementNS(svgNS , tag);
+								for(var attr in objAttr){
+								oTag.setAttribute(attr , objAttr[attr]);
+								}
+								return oTag;
+								}
+
+								function addTag(){
+
+								var oSvg = createTag('svg',{'xmlns':svgNS,'width':'100%','height':'100%'});
+
+								for(var i=0;i<data.otherNode.length;i++){
+								addOtherTag( data.otherNode[i] , oSvg );
+								}
+
+								var oG = createTag('g',{'style':'cursor:pointer'});
+								var oCircle = createTag('circle',{'cx':centerX,'cy':centerY,'r':'40','fill':'white','stroke':'#ff6e27','stroke-width':'1'});
+								var oText = createTag('text',{'x':centerX,'y':centerY+8,'font-size':'20','text-anchor':'middle'});
+								oText.innerHTML = data.centerNode.text;
+
+								oG.appendChild(oCircle);
+								oG.appendChild(oText);
+
+								oSvg.appendChild(oG);
+								oParent.appendChild(oSvg);
+								}
+
+								addTag();
+
+								function addOtherTag(otherAttr , oSvg){
+
+								var oG = createTag('g',{'style':'cursor:pointer','class':'lineStyle'});
+								var oLine1 = createTag('line',{'x1':otherAttr.x,'y1':otherAttr.y,'x2':centerX,'y2':centerY,'stroke':'#ccc'});
+								var oLine2 = createTag('line',{'x1':otherAttr.x,'y1':otherAttr.y,'x2':centerX,'y2':centerY,'stroke':'transparent','stroke-width':'10'});
+								var oRect = createTag('rect',{'x': (otherAttr.x + centerX)/2 - 10 ,'y': (otherAttr.y + centerY)/2 - 10 ,'fill':'#999','width':'20','height':'20','rx':'5'});
+								var oText = createTag('text',{'x':(otherAttr.x + centerX)/2,'y':(otherAttr.y + centerY)/2 + 8,'fill':'white','font-size':'20','text-anchor':'middle'});
+								//oText.innerHTML = '?';
+
+								oG.appendChild(oLine1);
+								oG.appendChild(oLine2);
+								//oG.appendChild(oRect);
+								oG.appendChild(oText);
+
+								oSvg.appendChild(oG);
+
+
+								var oG = createTag('g',{'style':'cursor:pointer','class':'circleStyle'});
+								var oCircle = createTag('circle',{'cx':otherAttr.x,'cy':otherAttr.y,'r':'30','fill':'white','stroke':'#ff6e27','stroke-width':'1'});
+								var oText = createTag('text',{'x':otherAttr.x,'y':otherAttr.y+8,'font-size':'20','text-anchor':'middle'});
+								oText.innerHTML = otherAttr.text;
+
+								oG.appendChild(oCircle);
+								oG.appendChild(oText);
+
+								oSvg.appendChild(oG);
+
+								}
+
+								bindTag();
+
+								function bindTag(){
+								var aLine = document.getElementsByClassName('lineStyle');
+								var aCircle = document.getElementsByClassName('circleStyle');
+
+								for(var i=0;i<aCircle.length;i++){
+								aCircle[i].onmouseenter = function(){
+								startMove( this.getElementsByTagName('circle')[0] , 30 , 40 );
+								var prevLine = this.previousElementSibling;
+								prevLine.getElementsByTagName('line')[0].setAttribute('stroke','#ff008a');
+								//prevLine.getElementsByTagName('rect')[0].setAttribute('fill','red');
+
+								};
+								aCircle[i].onmouseleave = function(){
+								startMove( this.getElementsByTagName('circle')[0] , 40 , 30 );
+								var prevLine = this.previousElementSibling;
+								prevLine.getElementsByTagName('line')[0].setAttribute('stroke','#ccc');
+								//prevLine.getElementsByTagName('rect')[0].setAttribute('fill','#999');
+								};
+								}
+								for(var i=0;i<aLine.length;i++){
+								aLine[i].onmouseenter = function(){
+								this.getElementsByTagName('line')[0].setAttribute('stroke','blue');
+								//this.getElementsByTagName('rect')[0].setAttribute('fill','red');
+								var prevCircle = this.nextElementSibling;
+								startMove( prevCircle.getElementsByTagName('circle')[0] , 30 , 40 );
+								};
+								aLine[i].onmouseleave = function(){
+								this.getElementsByTagName('line')[0].setAttribute('stroke','#ccc');
+								//this.getElementsByTagName('rect')[0].setAttribute('fill','#999');
+								var prevCircle = this.nextElementSibling;
+								startMove( prevCircle.getElementsByTagName('circle')[0] , 40 , 30 );
+								};
+								}
+
+								}
+
+								function startMove(obj,r1,r2){
+								var nowR = r1;
+								var overR = r2;
+								obj.speed = 0;
+								clearInterval(obj.timer);
+								obj.timer = setInterval(function(){
+
+								obj.speed += (overR - nowR)/6;
+								obj.speed *= 0.9;
+
+								if( Math.abs(overR - nowR)<=1 && Math.abs(obj.speed)<=1 ){
+								clearInterval(obj.timer);
+								obj.setAttribute( 'r' , overR );
+								}
+								else{
+								nowR += obj.speed;
+								obj.setAttribute( 'r' , nowR );
+								}
+
+								},30);
+								}
+
+							</textarea>
+
 						</div>
 					</div>
 				</div>
@@ -273,6 +402,7 @@ if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
 	<script type="text/javascript" src="js/demo.js"></script>
 	<!--svgIcon-->
 	<script type="text/javascript" src="svgIcon/js/mysnag.js"></script>
+    <script type="text/javascript" src="svgCircle/js/mycircle.js"></script>
 	
 </body>
 </html>
