@@ -32,7 +32,6 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	overflow: hidden;
-	overflow-y: scroll;
 }
 
 body.body--hidden {
@@ -180,7 +179,7 @@ a:focus {
 /* Content */
 
 .content {
-	padding: 1em 0 4em;
+	/*padding: 1em 0 4em;*/
 }
 /* Related demos */
 
@@ -219,7 +218,7 @@ a:focus {
 
 .wrapper {
 	overflow: auto;
-	width: 95%;
+	/*width: 95%;*/
 	max-width: 1366px;
 	margin: 0 auto;
 }
