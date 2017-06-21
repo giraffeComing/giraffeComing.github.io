@@ -1,1 +1,208 @@
-{"status": 1, "message": "恭喜你,成功了!"}
+{
+  "array": [
+    {
+      "sale": 68,
+      "activeHeart": false,
+      "src": "http://dummyimage.com/240x240/fff",
+      "src2": "http://dummyimage.com/240x240/eee",
+      "href": "http://www.soufeel.com/",
+      "name": "Fingers with Hearts",
+      "sku": "soufeel",
+      "price": 82.26,
+      "priceOld": 57.29,
+      "tagType": 1,
+      "tags": [
+        "Free Shipping",
+        "Presale - Ships On 15th"
+      ],
+      "number": 0
+    },
+    {
+      "sale": 4,
+      "activeHeart": false,
+      "src": "http://dummyimage.com/240x240/fff",
+      "src2": "http://dummyimage.com/240x240/eee",
+      "href": "http://www.soufeel.com/",
+      "name": "Fingers with Hearts",
+      "sku": "soufeel",
+      "price": 54.96,
+      "priceOld": 36.05,
+      "tagType": 3,
+      "tags": [
+        "Free Shipping",
+        "Presale - Ships On 15th"
+      ],
+      "number": 0
+    },
+    {
+      "sale": 67,
+      "activeHeart": false,
+      "src": "http://dummyimage.com/240x240/fff",
+      "src2": "http://dummyimage.com/240x240/eee",
+      "href": "http://www.soufeel.com/",
+      "name": "Fingers with Hearts",
+      "sku": "soufeel",
+      "price": 90.66,
+      "priceOld": 21.71,
+      "tagType": 3,
+      "tags": [
+        "Free Shipping",
+        "Presale - Ships On 15th"
+      ],
+      "number": 0
+    },
+    {
+      "sale": 64,
+      "activeHeart": false,
+      "src": "http://dummyimage.com/240x240/fff",
+      "src2": "http://dummyimage.com/240x240/eee",
+      "href": "http://www.soufeel.com/",
+      "name": "Fingers with Hearts",
+      "sku": "soufeel",
+      "price": 40.27,
+      "priceOld": 66.26,
+      "tagType": 3,
+      "tags": [
+        "Free Shipping",
+        "Presale - Ships On 15th"
+      ],
+      "number": 0
+    },
+    {
+      "sale": 87,
+      "activeHeart": false,
+      "src": "http://dummyimage.com/240x240/fff",
+      "src2": "http://dummyimage.com/240x240/eee",
+      "href": "http://www.soufeel.com/",
+      "name": "Fingers with Hearts",
+      "sku": "soufeel",
+      "price": 67.96,
+      "priceOld": 63.29,
+      "tagType": 1,
+      "tags": [
+        "Free Shipping",
+        "Presale - Ships On 15th"
+      ],
+      "number": 0
+    },
+    {
+      "sale": 88,
+      "activeHeart": false,
+      "src": "http://dummyimage.com/240x240/fff",
+      "src2": "http://dummyimage.com/240x240/eee",
+      "href": "http://www.soufeel.com/",
+      "name": "Fingers with Hearts",
+      "sku": "soufeel",
+      "price": 93.44,
+      "priceOld": 64.62,
+      "tagType": 2,
+      "tags": [
+        "Free Shipping",
+        "Presale - Ships On 15th"
+      ],
+      "number": 0
+    },
+    {
+      "sale": 56,
+      "activeHeart": false,
+      "src": "http://dummyimage.com/240x240/fff",
+      "src2": "http://dummyimage.com/240x240/eee",
+      "href": "http://www.soufeel.com/",
+      "name": "Fingers with Hearts",
+      "sku": "soufeel",
+      "price": 57.16,
+      "priceOld": 81.04,
+      "tagType": 1,
+      "tags": [
+        "Free Shipping",
+        "Presale - Ships On 15th"
+      ],
+      "number": 0
+    },
+    {
+      "sale": 19,
+      "activeHeart": true,
+      "src": "http://dummyimage.com/240x240/fff",
+      "src2": "http://dummyimage.com/240x240/eee",
+      "href": "http://www.soufeel.com/",
+      "name": "Fingers with Hearts",
+      "sku": "soufeel",
+      "price": 45.48,
+      "priceOld": 30.23,
+      "tagType": 1,
+      "tags": [
+        "Free Shipping",
+        "Presale - Ships On 15th"
+      ],
+      "number": 0
+    },
+    {
+      "sale": 50,
+      "activeHeart": false,
+      "src": "http://dummyimage.com/240x240/fff",
+      "src2": "http://dummyimage.com/240x240/eee",
+      "href": "http://www.soufeel.com/",
+      "name": "Fingers with Hearts",
+      "sku": "soufeel",
+      "price": 43.07,
+      "priceOld": 37.94,
+      "tagType": 1,
+      "tags": [
+        "Free Shipping",
+        "Presale - Ships On 15th"
+      ],
+      "number": 0
+    },
+    {
+      "sale": 14,
+      "activeHeart": true,
+      "src": "http://dummyimage.com/240x240/fff",
+      "src2": "http://dummyimage.com/240x240/eee",
+      "href": "http://www.soufeel.com/",
+      "name": "Fingers with Hearts",
+      "sku": "soufeel",
+      "price": 55.94,
+      "priceOld": 79.05,
+      "tagType": 2,
+      "tags": [
+        "Free Shipping",
+        "Presale - Ships On 15th"
+      ],
+      "number": 0
+    },
+    {
+      "sale": 99,
+      "activeHeart": true,
+      "src": "http://dummyimage.com/240x240/fff",
+      "src2": "http://dummyimage.com/240x240/eee",
+      "href": "http://www.soufeel.com/",
+      "name": "Fingers with Hearts",
+      "sku": "soufeel",
+      "price": 28.29,
+      "priceOld": 13.03,
+      "tagType": 2,
+      "tags": [
+        "Free Shipping",
+        "Presale - Ships On 15th"
+      ],
+      "number": 0
+    },
+    {
+      "sale": 93,
+      "activeHeart": true,
+      "src": "http://dummyimage.com/240x240/fff",
+      "src2": "http://dummyimage.com/240x240/eee",
+      "href": "http://www.soufeel.com/",
+      "name": "Fingers with Hearts",
+      "sku": "soufeel",
+      "price": 82.95,
+      "priceOld": 99.86,
+      "tagType": 1,
+      "tags": [
+        "Free Shipping",
+        "Presale - Ships On 15th"
+      ],
+      "number": 0
+    }
+  ]
+}
